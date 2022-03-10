@@ -8,6 +8,13 @@ function NavBar () {
 return(
 <Navbar className="NavBar--Container" sticky="top" expand="sm">
   <Container fluid>
+  <img
+        src="/imagenes/logofaustina.png"
+        width="30"
+        height="30"
+        className="d-inline-block align-top"
+        alt="React Bootstrap logo"
+      />
     <Navbar.Brand className="Brand" href="#home" id="marca">FAUSTINA</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="basic-navbar-nav">
