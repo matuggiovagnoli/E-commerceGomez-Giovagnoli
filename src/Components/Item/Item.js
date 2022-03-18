@@ -1,23 +1,18 @@
 import React from 'react'
-import {Card,Button} from "react-bootstrap"
+
 
 function Item({nombre,talla,color,marca,tipo,img}) {
   return (
-    <Card style={{ width: '18rem' }}>
-    <Card.Img variant="top" src={img} />
-    <Card.Body>
-      <Card.Title>{nombre}</Card.Title>
-      <Card.Text>
-        <ul>
-          <li>{marca}</li>
-          <li>{tipo}</li>
-          <li>{talla}</li>
-          <li>{color}</li>
-        </ul>
-      </Card.Text>
-      <Button variant="primary">Detalles</Button>
-    </Card.Body>
-  </Card>
+  
+    <div className="card" style={{width: '18rem', margin: '12px', display: "inline"}}>
+      <img src={img} className="card-img-top" alt={nombre}/>
+      <div className="card-body">
+        <h5 className="card-title">{nombre}</h5>
+        <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <button type="button" className="btn btn-outline-primary">Mas Detalles</button>
+      </div>
+    </div>
+  
   )
 }
 
