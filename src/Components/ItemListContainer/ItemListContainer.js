@@ -1,36 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ItemList from '../ItemList/ItemList'
-
-const imprimirProductos = () =>{
-  return new Promise ((resolve,reject)=>{
-
-    setTimeout(() =>{
-      let listaProductos = [
-        {nombre:"ZAPATOS 1220.317", talla:"38", color:"Negro y Blanco", marca:"Vizzano", tipo:"Zapato Taco Medio",img:"./imagenes/1.jpg"},
-        {nombre:"ZAPATOS 1365.115", talla:"38", color:"Beige 435", marca:"Vizzano", tipo:"Zapato taco medio",img:"./imagenes/2.jpg"},
-        {nombre:"ZAPATOS 1395.101", talla:"38", color:"Rojo", marca:"Vizzano", tipo:"Zapato taco alto",img:"./imagenes/3.jpg"},
-        {nombre:"ZAPATOS 1395.102", talla:"38", color:"Negro", marca:"Vizzano", tipo:"Zapato taco alto",img:"./imagenes/4.jpg"},
-        {nombre:"BOTAS 3079.106", talla:"38", color:"Blanco y Negro", marca:"Vizzano", tipo:"Bota taco medio",img:"../imagenes/5.jpg"},
-        {nombre:"BOTAS 3089.102", talla:"38", color:"Camel", marca:"Vizzano", tipo:"Bota taco alto",img:"./imagenes/6.jpg"}
-      ]
-        resolve(listaProductos)
-    },2000)
-  })
-}
-
- imprimirProductos().then((resultado)=>{
-  return resultado
-})
-
-
 
 
 const ItemListContainer = ({saludo}) => {
+
+  const [listaProductos, setListaProductos] = useState([])
+
+  useEffect (()=>{
+    const promesa = new Promise ((resolve,reject)=>{
+      setTimeout(()=>{
+        resolve ([
+        {id:"01" ,nombre:"MIZA ",descripcion:"Sandalia de cuero texturado, con aplique de tachas metálicas laterales y pulsera regulable con hebilla. Altura: 6cm - Còmodas y chancheras, ideales para todos los días" ,talla:"38", color:"Negro", marca:"VIAMO",categoria:"Sandalia",img:"./imagenes/1.jpg", stock:"4"},
+        {id:"02" ,nombre:"BELMA", talla:"38", color:"HUESO", marca:"VIAMO",categoria:"Zapato",img:"./imagenes/2.jpg" ,descripcion:"Zapato estilo zueco de cuero soft, con detalle de gradado sobre tiras cruzadas. Altura: 2,5cm - Clásicos que no pasan de moda" ,stock:"2"},
+        {id:"03" ,nombre:"FAUSTI ", talla:"38", color:"TRUFA", marca:"VIAMO",categoria:"Borcegos",img:"./imagenes/3.jpg" ,descripcion:"Borcego de cuero graneado con detalle de alpinos metálicos y cierre interior para un mejor calce. Altura: 3 cm - ¡Los vas a amar, pensados para andar todo el invierno!" ,stock:"6"}
+        ])
+      }, 2000);
+    })
+    promesa.then(resultado => setListaProductos(resultado))
+  },[])
+
+
  
   return (
     <div>
       <h2>{saludo}</h2>
-      <ItemList lista={ resultado }/>
+      <ItemList lista={ listaProductos }/>
     </div>
   )
 }
