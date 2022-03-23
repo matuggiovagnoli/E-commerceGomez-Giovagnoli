@@ -18,7 +18,7 @@ const ItemDetail = ({id, nombre, descripcion, talla, color, marca, categoria, im
                 <p>{descripcion}</p>
                 <p>categoria: {categoria}</p>
             </div>
-            
+            <ItemCount/>
         </div>
 
     </div>

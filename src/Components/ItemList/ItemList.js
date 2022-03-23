@@ -11,7 +11,7 @@ const ItemList = ( {lista} ) => {
       <hr/>
 
       <div className='row'>
-       {lista.map( (item)=> <Item key={item.id} nombre={item.nombre} categoria={item.categoria} color={item.color} marca={item.marca} tipo={item.tipo} img={item.img} />)}
+       {lista.map( (item)=> <Item key={item.id} nombre={item.nombre} categoria={item.categoria} color={item.color} marca={item.marca} tipo={item.tipo} img={item.img} id={item.id} />)}
       </div>
     </div>
     

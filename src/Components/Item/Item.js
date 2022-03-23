@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {Link} from "react-router-dom"
 
 
-function Item({nombre,talla,color,marca,categoria,img}) {
+function Item({nombre,talla,color,marca,categoria,img,id}) {
   return (
   
     <div className="card" style={{width: '18rem', margin: '12px', display: "inline"}}>
@@ -9,7 +10,7 @@ function Item({nombre,talla,color,marca,categoria,img}) {
       <div className="card-body">
         <h5 className="card-title">{nombre}</h5>
         <p className="card-text">{categoria}.</p>
-        <button type="button" className="btn btn-outline-primary">Mas Detalles</button>
+        <Link to={`/detalle/${id}`}>Mas Detalles</Link>
       </div>
     </div>
   
