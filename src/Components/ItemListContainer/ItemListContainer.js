@@ -13,9 +13,9 @@ const ItemListContainer = ({saludo}) => {
     const promesa = new Promise ((resolve,reject)=>{
       setTimeout(()=>{
         resolve ([
-        {id:"01" ,nombre:"MIZA ", talla:"38", color:"Negro", marca:"VIAMO",categoria:"Sandalias",img:"./imagenes/1.jpg", stock:"4", descripcion:"Sandalia de cuero texturado, con aplique de tachas metálicas laterales y pulsera regulable con hebilla. Altura: 6cm - Còmodas y chancheras, ideales para todos los días"},
-        {id:"02" ,nombre:"BELMA", talla:"38", color:"HUESO", marca:"VIAMO",categoria:"Zapatos",img:"./imagenes/2.jpg" ,descripcion:"Zapato estilo zueco de cuero soft, con detalle de gradado sobre tiras cruzadas. Altura: 2,5cm - Clásicos que no pasan de moda" ,stock:"2"},
-        {id:"03" ,nombre:"FAUSTI ", talla:"38", color:"TRUFA", marca:"VIAMO",categoria:"Borcegos",img:"./imagenes/3.jpg" ,descripcion:"Borcego de cuero graneado con detalle de alpinos metálicos y cierre interior para un mejor calce. Altura: 3 cm - ¡Los vas a amar, pensados para andar todo el invierno!" ,stock:"6"}
+        {id:"01" ,nombre:"MIZA ", talla:"38", color:"NEGRO", marca:"VIAMO",categoria:"Sandalias",img:"https://i.ibb.co/bzJzPgB/miza-negro-1.webp", stock:"4", descripcion:"Sandalia de cuero texturado, con aplique de tachas metálicas laterales y pulsera regulable con hebilla. Altura: 6cm - Còmodas y chancheras, ideales para todos los días"},
+        {id:"02" ,nombre:"ALBITA", talla:"38", color:"SUELA", marca:"VIAMO",categoria:"Zapatos",img:"https://i.ibb.co/hWxcVmm/Albita-suela-1.webp" ,descripcion:"Zapato de cuero graneado con detalle de alpinos metálicos, cordones y costuras a tono. Altura: 4 cm - ¡No hay nada más canchero!" ,stock:"2"},
+        {id:"03" ,nombre:"FAUSTI ", talla:"38", color:"TRUFA", marca:"VIAMO",categoria:"Borcegos",img:"https://i.ibb.co/yhLDK8t/VC07322-CV168.webp" ,descripcion:"Borcego de cuero graneado con detalle de alpinos metálicos y cierre interior para un mejor calce. Altura: 3 cm - ¡Los vas a amar, pensados para andar todo el invierno!" ,stock:"6"}
         ])
       }, 2000);
     })

@@ -10,7 +10,7 @@ return(
 <Navbar className="NavBar--Container" sticky="top" expand="sm">
   <Container fluid>
   <img
-        src="/imagenes/logofaustina.png"
+        src="https://i.ibb.co/zVH6SLX/logofaustina.png"
         width="30"
         height="30"
         className="d-inline-block align-top"
