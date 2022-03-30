@@ -1,13 +1,10 @@
 import {React, useState} from 'react';
 
 
-const ItemCount = ({max,contador,setContador}) => {
+const ItemCount = ({max, onAdd, initial}) => {
 
-const [showCounter, setshowCounter] = useState(true)
-
-const closeCounter = () => {
-    setshowCounter (false)
-}
+    const [contador,setContador] = useState(initial)
+    
 
 const suma = () => {
     if (contador < max){
@@ -22,26 +19,22 @@ const resta = () => {
 };
 
   return (
-      <>
-            {
-                showCounter &&
-                    <div className="container-sm d-flex justify-content-center ">
+        
+        <div className="container-sm d-flex justify-content-center ">
 
-                        <button onClick={suma} type="button" className="btn btn-outline-primary btn-sm "> + </button>
+            <button onClick={suma} type="button" className="btn btn-outline-primary btn-sm "> + </button>
 
-                        <span> {contador} </span>
+            <span> {contador} </span>
 
-                        <button onClick={resta} type="button" className="btn btn-outline-primary btn-sm "> - </button>
+            <button onClick={resta} type="button" className="btn btn-outline-primary btn-sm "> - </button>
 
-                        <div>
+            <div>
 
-                        <button type="button" className="btn btn-outline-primary btn-sm " onClick={closeCounter}>agregar al carrito</button>
+            <button type="button" className="btn btn-outline-primary btn-sm " onClick={() => {onAdd(contador)}} >agregar al carrito</button>
 
-                        </div>
+            </div>
 
-                    </div>
-            }
-    </>
+        </div>
   )
 };
 

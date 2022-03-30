@@ -1,4 +1,3 @@
-import {Navbar,Nav,Container,NavDropdown} from "react-bootstrap";
 import React from "react";
 import './NavBar.css';
 import CartWidget from "../CartWidget/CartWidget";
@@ -7,34 +6,41 @@ import { Link } from "react-router-dom";
 
 function NavBar () {
 return(
-<Navbar className="NavBar--Container" sticky="top" expand="sm">
-  <Container fluid>
-  <img
-        src="https://i.ibb.co/zVH6SLX/logofaustina.png"
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-      />
-    <Navbar.Brand className="Brand" href="/" id="marca">FAUSTINA</Navbar.Brand>
-    <Navbar.Toggle aria-controls="navbarScroll" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link href="/">Inicio</Nav.Link>
-        <Nav.Link href="SobreNosotros">Sobre Nosotros</Nav.Link>
-        <NavDropdown title="Producos" id="basic-nav-dropdown">
-          <NavDropdown title="Calzado">
-            <NavDropdown.Item href="/productos/Zapatos">Zapatos</NavDropdown.Item>
-            <NavDropdown.Item href="/productos/Sandalias">Sandalias</NavDropdown.Item>
-            <NavDropdown.Item href="/productos/Borcegos">Borcegos</NavDropdown.Item>
-          </NavDropdown>
-          <NavDropdown.Item href="carteras">Carteras</NavDropdown.Item>
-        </NavDropdown>
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-  <CartWidget/>
-</Navbar>
+<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div className="container-fluid">
+    <Link className="navbar-brand" to="#">Navbar</Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/SobreNosotros">Sobre Nosotros</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/">Productos</Link>
+        </li>
+        <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categorias
+          </Link>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><Link className="dropdown-item" to="/productos/Zapatos">Zapatos</Link></li>
+            <li><Link className="dropdown-item" to="/productos/Sandalias">Sandalias</Link></li>
+            <li><Link className="dropdown-item" to="/productos/Borcegos">Borcegos</Link></li>
+            <li><Link className="dropdown-item" to="#">Carteras</Link></li>
+          </ul>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/Cart">Carrito</Link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 );
 
 }
