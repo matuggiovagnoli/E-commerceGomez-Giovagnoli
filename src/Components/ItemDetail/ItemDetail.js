@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../Context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 
@@ -13,7 +14,7 @@ const ItemDetail = ({producto}) => {
   
   
   const [productosagruegados, setProductosAgregados] = useState(0)
-  const [stockProducto, setStockProducto] = useState(producto.stock)
+  const [stockProducto, setStockProducto] = useState(6)
   
   
 
@@ -46,6 +47,22 @@ const ItemDetail = ({producto}) => {
                 <h5>categoria: {producto.categoria}</h5>
                 <h4>Stock disponible: {stockProducto}</h4>
                 <ItemCount max={producto.stock} onAdd={onAdd} initial={1}/>
+                {
+                  productosagruegados > 0 &&
+                  <div className='container'>
+                    <hr/>
+                    <div className='row '>
+                      <div className='col ms-5'>
+                        <Link to="/" className="btn btn-secondary">Seguir Comprando</Link>
+                      </div>
+                      <div className='col'>
+                        <Link to="/Cart" className="btn btn-danger">Finalizar mis Compras</Link>
+                      </div>
+                    </div>
+                  </div>
+
+                }
+                
             </div>
             
         </div>

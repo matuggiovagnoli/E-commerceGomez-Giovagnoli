@@ -22,15 +22,15 @@ const resta = () => {
         
         <div className="container-sm d-flex justify-content-center ">
 
-            <button onClick={suma} type="button" className="btn btn-outline-primary btn-sm "> + </button>
+            <button onClick={suma} type="button" className="btn btn-outline-secondary "> + </button>
 
-            <span> {contador} </span>
+            <p className='m-2'> {contador} </p>
 
-            <button onClick={resta} type="button" className="btn btn-outline-primary btn-sm "> - </button>
+            <button onClick={resta} type="button" className="btn btn-outline-secondary "> - </button>
 
             <div>
 
-            <button type="button" className="btn btn-outline-primary btn-sm " onClick={() => {onAdd(contador)}} >agregar al carrito</button>
+            <button type="button" className="btn btn-outline-secondary mx-3" onClick={() => {onAdd(contador)}} >agregar al carrito</button>
 
             </div>
 

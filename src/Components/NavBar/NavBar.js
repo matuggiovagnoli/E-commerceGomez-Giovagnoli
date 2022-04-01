@@ -35,7 +35,9 @@ return(
           </ul>
         </li>
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/Cart">Carrito</Link>
+          <Link className="nav-link active" aria-current="page" to="/Cart">
+            <CartWidget/>
+          </Link>
         </li>
       </ul>
     </div>
