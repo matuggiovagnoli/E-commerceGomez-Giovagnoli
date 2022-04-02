@@ -23,8 +23,8 @@ const ItemDetailContainer = () => {
                         talla:"38", 
                         color:"Negro", 
                         marca:"VIAMO",
-                        categoria:"Sandalias"
-                        ,img1:"https://i.ibb.co/bzJzPgB/miza-negro-1.webp",
+                        categoria:"Sandalias",
+                        img1:"https://i.ibb.co/bzJzPgB/miza-negro-1.webp",
                         img2:"https://i.ibb.co/8mWTbCJ/miza-negro-2.webp",
                         img3:"https://i.ibb.co/HCbmgcD/miza-negro-3.webp",
                         img4:"https://i.ibb.co/Nmz6z2H/miza-negro-4.webp",
@@ -33,7 +33,7 @@ const ItemDetailContainer = () => {
                     },
                     {
                         id:"02" ,
-                        nombre:"BELMA", 
+                        nombre:"ALBITA", 
                         precio: 16000,
                         talla:"38", 
                         color:"HUESO", 
