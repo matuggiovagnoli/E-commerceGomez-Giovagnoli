@@ -1,9 +1,10 @@
 import {React, useState} from 'react';
 
 
-const ItemCount = ({max, onAdd, initial}) => {
+const ItemCount = ({max, onAdd, initial, ProductosAgregados}) => {
 
     const [contador,setContador] = useState(initial)
+    console.log("prodagregados", ProductosAgregados)
     
 
 const suma = () => {
@@ -30,7 +31,8 @@ const resta = () => {
 
             <div>
 
-            <button type="button" className="btn btn-outline-secondary mx-3" onClick={() => {onAdd(contador)}} >agregar al carrito</button>
+            <button type="button" className="btn btn-outline-secondary mx-3" onClick={() => {onAdd(contador)}} data-bs-toggle="modal" data-bs-target="#exampleModal">agregar al carrito</button>
+                 
 
             </div>
 

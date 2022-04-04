@@ -23,7 +23,7 @@ function Cart() {
             <CartItem key={Item.producto.id} imagen={Item.producto.img1} nombre={Item.producto.nombre} cantidad={Item.cantidad} precio={Item.producto.precio} id={Item.producto.id}/>
           ))
         }
-          <p>Total a Pagar: {carritoContext.totalidadDePago()}</p>
+          <h4>Total a Pagar $ {carritoContext.totalidadDePago()}</h4>
           <button className='position-absolute top-100 start-50 translate-middle' onClick={carritoContext.clear}>Vaciar Carrito</button>
       </div>)
       :

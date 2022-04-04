@@ -46,8 +46,10 @@ const ItemDetail = ({producto}) => {
                 <h5>Color: {producto.color}</h5>
                 <h5>categoria: {producto.categoria}</h5>
                 <h4>Stock disponible: {stockProducto}</h4>
-                <ItemCount max={producto.stock} onAdd={onAdd} initial={1}/>
+                <ItemCount max={producto.stock} onAdd={onAdd} initial={1} ProductosAgregados={productosagruegados}/>
                 {
+                  
+                  // AGREGAR MODAL PARA ESTO
                   productosagruegados > 0 &&
                   <div className='container'>
                     <hr/>

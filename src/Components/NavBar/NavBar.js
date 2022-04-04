@@ -8,7 +8,7 @@ function NavBar () {
 return(
 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
   <div className="container-fluid">
-    <Link className="navbar-brand" to="#">Navbar</Link>
+    <Link className="navbar-brand" to="#">FAUSTINA</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +31,7 @@ return(
             <li><Link className="dropdown-item" to="/productos/Zapatos">Zapatos</Link></li>
             <li><Link className="dropdown-item" to="/productos/Sandalias">Sandalias</Link></li>
             <li><Link className="dropdown-item" to="/productos/Borcegos">Borcegos</Link></li>
-            <li><Link className="dropdown-item" to="#">Carteras</Link></li>
+            <li><Link className="dropdown-item" to="/productos/Carteras">Carteras</Link></li>
           </ul>
         </li>
         <li className="nav-item">
