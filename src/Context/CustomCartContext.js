@@ -16,7 +16,7 @@ export const CustomCartContext = ({children})=>{
             producto,
             cantidad
         }
-        console.log("nuevoproducto", nuevoProducto)
+        // console.log("nuevoproducto", nuevoProducto)
         setProductosCarrito([...productosCarrito, nuevoProducto])
     }}
 
@@ -35,7 +35,7 @@ export const CustomCartContext = ({children})=>{
 
     // valida si un producto ya existe en el carrito
     const isInCart = (idInUse) =>{
-        console.log("id idInUse", idInUse)
+        // console.log("id idInUse", idInUse)
         return productosCarrito.some(item => item.producto.id === idInUse)
     }
         

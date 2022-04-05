@@ -23,6 +23,7 @@ const ItemDetailContainer = () => {
             const dataDoc = responseDoc.data();
 
             const nuevoDocumento = {id: responseDoc.id, ...dataDoc};
+            // console.log("item detail prod", nuevoDocumento)
 
             setProducto(nuevoDocumento)
 

@@ -8,8 +8,8 @@ import { useContext } from 'react';
 const CartWidget = () => {
   const carritoContex = useContext(CartContext)
   const [onOff, setOnOff] = useState(false)
-  console.log("onOff", onOff)
-  console.log("getContadorDeItemsCarrito", carritoContex.getContadorDeItemsCarrito())
+  // console.log("onOff", onOff)
+  // console.log("getContadorDeItemsCarrito", carritoContex.getContadorDeItemsCarrito())
 
   useEffect(() =>{
     const getUse = () => {

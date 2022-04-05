@@ -4,7 +4,7 @@ import {React, useState} from 'react';
 const ItemCount = ({max, onAdd, initial, ProductosAgregados}) => {
 
     const [contador,setContador] = useState(initial)
-    console.log("prodagregados", ProductosAgregados)
+    // console.log("prodagregados", ProductosAgregados)
     
 
 const suma = () => {
