@@ -2,7 +2,7 @@ import  { useState, useEffect } from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import db from '../../utils/firebase';
-import { collection, doc, getDocs, getDoc } from "firebase/firestore"
+import { doc, getDoc } from "firebase/firestore"
 
 
 
@@ -11,6 +11,8 @@ import { collection, doc, getDocs, getDoc } from "firebase/firestore"
 const ItemDetailContainer = () => {
     
     const [producto, setProducto] = useState({});
+    const [colores,setColores] = useState ([])
+    const [imagenes,setImagenes] = useState ({})
     const {ItemId} = useParams();
     
 
@@ -26,6 +28,8 @@ const ItemDetailContainer = () => {
             // console.log("item detail prod", nuevoDocumento)
 
             setProducto(nuevoDocumento)
+            setColores(nuevoDocumento.color)
+            setImagenes(nuevoDocumento.imagenes)
 
         }
         getDataDoc()
@@ -35,7 +39,7 @@ const ItemDetailContainer = () => {
 
 
   return (
-    <ItemDetail producto={producto}/>
+    <ItemDetail producto={producto} colores={colores} imagenes={imagenes}/>
   )
 }
 
