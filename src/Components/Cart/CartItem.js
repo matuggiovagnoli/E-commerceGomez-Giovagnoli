@@ -36,7 +36,8 @@ const enviarPedido = async(event) => {
     
 
   return (
-    <div className='container w-50' >
+    <div className='container w-50 ' >
+      <h1>FAUSTINA</h1>
         <div className='row border m-2 shadow p-3 mb-5 bg-body rounded' style={{backgroundColor: "#f5f5f5"}}>
           <div className='col'>
             <img className="w-100 h-100" src={imagen} alt="Imagen del producto"/>

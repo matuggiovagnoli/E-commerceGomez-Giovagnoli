@@ -19,6 +19,7 @@ const ItemDetail = ({producto,colores,imagenes, stock}) => {
   // console.log("colores", colores)
   console.log("producto id", producto.id)
   console.log("stock", stockActual)
+
   
   
   
@@ -59,11 +60,11 @@ const ItemDetail = ({producto,colores,imagenes, stock}) => {
                 <h5>categoria: {producto.categoria}</h5>
                 <h5>Colores disponibles</h5>
                 { 
-                  colores.map(colores => (
-                    <div className="form-check ">
+                  colores.map(color => (
+                    <div className="form-check " key={color}>
                       <input className="form-check-input " type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
                       <label className="form-check-label" htmlFor="flexRadioDefault1">
-                        {colores}
+                        {color}
                       </label>
                     </div>
                   ))
