@@ -17,13 +17,11 @@ function Cart() {
     <div>
       { productosCarrito.length > 0 ? (
       <div>
-        <h1>Carrito de Compras!!</h1>
         {
           productosCarrito.map(Item => (
-            <CartItem key={Item.producto.id} imagen={Item.producto.img1} nombre={Item.producto.nombre} cantidad={Item.cantidad} precio={Item.producto.precio} id={Item.producto.id}/>
+            <CartItem key={Item.producto.id} categoria={Item.producto.categoria} imagen={Item.producto.img} nombre={Item.producto.nombre} cantidad={Item.cantidad} precio={Item.producto.precio} id={Item.producto.id}/>
           ))
         }
-          <h4>Total a Pagar $ {carritoContext.totalidadDePago()}</h4>
           <button className='position-absolute top-100 start-50 translate-middle' onClick={carritoContext.clear}>Vaciar Carrito</button>
       </div>)
       :

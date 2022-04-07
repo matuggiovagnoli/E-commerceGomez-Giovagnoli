@@ -8,8 +8,8 @@ import { useContext } from 'react';
 const CartWidget = () => {
   const carritoContex = useContext(CartContext)
   const [onOff, setOnOff] = useState(false)
-  // console.log("onOff", onOff)
-  // console.log("getContadorDeItemsCarrito", carritoContex.getContadorDeItemsCarrito())
+  console.log("onOff", onOff)
+  console.log("getContadorDeItemsCarrito", carritoContex.getContadorDeItemsCarrito())
 
   useEffect(() =>{
     const getUse = () => {
@@ -27,9 +27,9 @@ const CartWidget = () => {
   return (
     <div>
       { onOff &&
-        <button type="button" className="btn btn-primary">
-        <BsCart3 color="blcak" fontSize="25px"/> 
-        <span className="badge bg-secondary m-2">{carritoContex.getContadorDeItemsCarrito()}</span>
+        <button type="button" className="btn btn-primary position-relative">
+        <BsCart3 className='m-1' color="blcak" fontSize="25px"/> 
+        <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger ">{carritoContex.getContadorDeItemsCarrito()}</span>
       </button>
       }
     </div>

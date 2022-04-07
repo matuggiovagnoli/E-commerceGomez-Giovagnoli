@@ -7,21 +7,24 @@ import Modal from '../Modal/Modal'
 
 
 
-const ItemDetail = ({producto,colores,imagenes}) => {
+const ItemDetail = ({producto,colores,imagenes, stock}) => {
 
   const carritoContext = useContext(CartContext)
+  const [productosagruegados, setProductosAgregados] = useState(0)
+  const [stockActual, setStockActual] = useState(0)
+  
   // console.log('carritoContex' , carritoContext)
 
   // console.log("imagenes", imagenes.imgnectar)
   // console.log("colores", colores)
   console.log("producto id", producto.id)
+  console.log("stock", stockActual)
   
   
   
   
   
-  const [productosagruegados, setProductosAgregados] = useState(0)
-  const [stockProducto, setStockProducto] = useState(6)
+  
   
   
   console.log("productosagruegados", productosagruegados)
@@ -29,7 +32,7 @@ const ItemDetail = ({producto,colores,imagenes}) => {
 
   const onAdd = (quantityToAdd) => {
     setProductosAgregados(quantityToAdd);
-    setStockProducto (stockProducto-quantityToAdd)
+    setStockActual (stockActual-quantityToAdd)
     carritoContext.addItem(producto,quantityToAdd)
   }
   
@@ -65,13 +68,13 @@ const ItemDetail = ({producto,colores,imagenes}) => {
                     </div>
                   ))
                 }
-                <h4>Stock disponible: {stockProducto}</h4>
-                <ItemCount max={producto.stock} onAdd={onAdd} initial={1} ProductosAgregados={productosagruegados} producto={producto}/>
+                <h4>Stock disponible: {producto.stock}</h4>
+                <ItemCount max={producto.stock} onAdd={onAdd} initial={1} ProductosAgregados={productosagruegados} producto={producto} id={producto.id}/>
                 {
                   
                   // AGREGAR MODAL PARA ESTO
                   productosagruegados > 0 &&
-                  <Modal/>
+                  <Modal id={`id${producto.id}`}/>
                   // <div className='container'>
                   //   <hr/>
                   //   <div className='row '>
