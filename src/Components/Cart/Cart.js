@@ -15,14 +15,26 @@ function Cart() {
 
   return (
     <div>
+      <h2 className='d-flex justify-content-center'>FAUSTINA</h2>
+      <hr/>
       { productosCarrito.length > 0 ? (
       <div>
         {
           productosCarrito.map(Item => (
-            <CartItem key={Item.producto.id} categoria={Item.producto.categoria} imagen={Item.producto.img} nombre={Item.producto.nombre} cantidad={Item.cantidad} precio={Item.producto.precio} id={Item.producto.id}/>
+            <CartItem key={Item.producto.id} 
+            categoria={Item.producto.categoria} 
+            imagen={Item.producto.img} 
+            nombre={Item.producto.nombre} 
+            cantidad={Item.cantidad} 
+            precio={Item.producto.precio} 
+            id={Item.producto.id}
+            talle={Item.producto.talla}
+            />
           ))
         }
-          <button className='position-absolute top-100 start-50 translate-middle' onClick={carritoContext.clear}>Vaciar Carrito</button>
+        
+          <button className='btn btn-outline-dark btn-lg d-flex w-50 ms-3 justify-content-center' onClick={carritoContext.clear}>Vaciar Carrito</button>
+        
       </div>)
       :
       (<div>

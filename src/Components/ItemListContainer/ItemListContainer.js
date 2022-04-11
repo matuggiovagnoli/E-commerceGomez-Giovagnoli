@@ -39,7 +39,7 @@ const ItemListContainer = ({saludo}) => {
 
 
   return (
-    <div>
+    <div style={{background: "#f5f5dc"}}>
       <ItemList lista={ listaProductos }/>
     </div>
   )

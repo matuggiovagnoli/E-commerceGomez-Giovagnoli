@@ -25,11 +25,11 @@ const CartWidget = () => {
   
 
   return (
-    <div>
+    <div className='position-relative'>
       { onOff &&
-        <button type="button" className="btn btn-primary position-relative">
+        <button type="button" className="btn position-relative" style={{background: "#ffe4b5"}}>
         <BsCart3 className='m-1' color="blcak" fontSize="25px"/> 
-        <span className="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger ">{carritoContex.getContadorDeItemsCarrito()}</span>
+        <span className="position-absolute top-50 start-0 translate-middle badge rounded-pill bg-danger">{carritoContex.getContadorDeItemsCarrito()}</span>
       </button>
       }
     </div>

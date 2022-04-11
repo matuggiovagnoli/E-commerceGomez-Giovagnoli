@@ -3,10 +3,6 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import db from '../../utils/firebase';
 import { doc, getDoc } from "firebase/firestore"
-import { toHaveDescription } from '@testing-library/jest-dom/dist/matchers';
-
-
-
 
 
 const ItemDetailContainer = () => {
@@ -15,6 +11,7 @@ const ItemDetailContainer = () => {
     const [colores,setColores] = useState ([])
     const [imagenes,setImagenes] = useState ({})
     const [stockProducto, setStockProducto] = useState()
+    const [imagenesColor, setImagenesColor] = useState([]);
     const {ItemId} = useParams();
     
 
@@ -29,11 +26,16 @@ const ItemDetailContainer = () => {
             const nuevoDocumento = {id: responseDoc.id, ...dataDoc};
             // console.log("item detail prod", nuevoDocumento)
 
-            setProducto(nuevoDocumento)
-            setColores(nuevoDocumento.color)
-            setImagenes(nuevoDocumento.imagenes)
-            setStockProducto(nuevoDocumento.stock)
-            console.log("imagenes",nuevoDocumento.imagenes)
+            setProducto(nuevoDocumento);
+            setColores(nuevoDocumento.color);
+            setImagenes(nuevoDocumento.imagenes);
+            setStockProducto(nuevoDocumento.stock);
+            setImagenesColor([
+              Object.values(nuevoDocumento.imagenes).flat()[0],
+              Object.values(nuevoDocumento.imagenes).flat()[1],
+              Object.values(nuevoDocumento.imagenes).flat()[2],
+              Object.values(nuevoDocumento.imagenes).flat()[3],
+            ]);
 
         }
         getDataDoc()
@@ -41,42 +43,18 @@ const ItemDetailContainer = () => {
     },[])
 
     
-    // const color = "suela"
-    // console.log( "keys de prod" ,Object.entries(producto).flat())
-
-    // const arrayColores = Object.entries(producto).flat().map(e => {
-    //   if (e.includes(color)){
-    //      console.log(e)
-    //   }else {
-    //     console.log(e)
-    //   }
-
-    // })
-
-    // console.log(arrayColores)
-
-
-
-
-    // const imgentries = (producto, color) => {
-    //   const arrayProducto = Object.entries(producto).flat()
-    //   const array = []
-    //   console.log("arrayProducto", arrayProducto.length)
-    //   for (let index = 1; index < arrayProducto.length; index++) {
-    //     return console.log(index)
-    //     // if (index.includes(color)){
-    //     //   console.log("suela")
-    //     // }
-        
-        
-    //   }
-    // }
-    // imgentries(producto, color)
-
-    
 
   return (
-    <ItemDetail producto={producto} colores={colores} imagenes={imagenes} stock={stockProducto}/>
+    <div style={{background: "#f5f5dc"}}>
+      <ItemDetail 
+      producto={producto} 
+      colores={colores} 
+      imagenes={imagenes} 
+      stock={stockProducto}
+      imagenesColor={imagenesColor}
+      setImagenesColor={setImagenesColor}
+      />
+    </div>
   )
 }
 

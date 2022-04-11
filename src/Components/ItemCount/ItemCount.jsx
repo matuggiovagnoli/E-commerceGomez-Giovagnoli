@@ -1,4 +1,5 @@
 import {React, useState} from 'react';
+import Modal from '../Modal/Modal';
 
 
 const ItemCount = ({max, onAdd, initial, ProductosAgregados, producto, id}) => {
@@ -32,7 +33,7 @@ const resta = () => {
             <div>
 
             <button type="button" className="btn btn-outline-secondary mx-3" disabled={producto.stock===0} onClick={() => {onAdd(contador)}} data-bs-toggle="modal" data-bs-target={`#id${id}`}>agregar al carrito</button>
-                 
+            <Modal id={`id${id}`} producto={producto} cantidad={contador}/>
 
             </div>
 

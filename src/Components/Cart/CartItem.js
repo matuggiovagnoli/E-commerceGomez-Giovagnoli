@@ -6,7 +6,7 @@ import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import db from '../../utils/firebase';
 import ModalCart from '../Modal/ModalCart';
 
-const CartItem = ({imagen, nombre, cantidad, precio, id, categoria}) => {
+const CartItem = ({imagen, nombre, cantidad, precio, id, categoria, talle}) => {
     const carritoContext = useContext(CartContext)
 
 const enviarPedido = async(event) => {
@@ -36,9 +36,8 @@ const enviarPedido = async(event) => {
     
 
   return (
-    <div className='container w-50 ' >
-      <h1>FAUSTINA</h1>
-        <div className='row border m-2 shadow p-3 mb-5 bg-body rounded' style={{backgroundColor: "#f5f5f5"}}>
+    <div className='container w-75 h-50 d-inline-block' style={{background: "#f5f5dc"}} >
+        <div className='row border m-2 shadow p-3 mb-5 bg-body rounded' style={{backgroundColor: "#f5f5dc"}}>
           <div className='col'>
             <img className="w-100 h-100" src={imagen} alt="Imagen del producto"/>
           </div>
@@ -58,6 +57,11 @@ const enviarPedido = async(event) => {
             <p>${precio}</p>
           </div>
           <div className='col justify-content-md-center pt-3'>
+            <p>Talle:</p>
+            <hr/>
+            <p>N:{talle}</p>
+          </div>
+          <div className='col justify-content-md-center pt-3'>
             <p>Precio Total:</p> 
             <hr/>
             <p>${precio * cantidad}</p>
@@ -68,13 +72,16 @@ const enviarPedido = async(event) => {
             </button>          
           </div>
         </div>
-        <form className='position-absolute top-50 end-0 translate-middle-y w-25' onSubmit={enviarPedido}>
+        <form className='position-absolute top-50 end-0 translate-middle-y w-25 h-75 p-3 needs-validation' onSubmit={enviarPedido} novalidate>
           <h2 className='bg-secondary rounded-pill d-md-inline-flex p-2 '>RESUMEN DE COMPRA</h2>
           <h4 className=''>Total a Pagar $ {carritoContext.totalidadDePago()}</h4>
           <hr/>
           <div className="input-group mb-3">
             <span className="input-group-text" id="basic-addon1">Nombre</span>
-            <input type="text" className="form-control form-control-sm" placeholder="Nombre Completo" aria-label="Username" aria-describedby="basic-addon1"/>
+            <input type="text" className="form-control form-control-sm" placeholder="Nombre Completo" aria-label="Username" aria-describedby="basic-addon1" id='validationCustomUsername' required/>
+              <div class="invalid-feedback">
+                Porfavor ingresar Nombre.
+            </div>
           </div>
           <br/>
           <div className="input-group mb-3">
