@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function NavBar () {
 return(
-<nav className="navbar navbar-expand-lg navbar-dark" style={{background: "#6b8e23"}}>
+<nav className="navbar navbar-expand-lg navbar-light" style={{background: "#6b8e23"}}>
   <div className="container-fluid">
     <Link className="navbar-brand fs-1" to="#">FAUSTINA</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,16 +15,16 @@ return(
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link active fs-3" aria-current="page" to="/">Inicio</Link>
+          <Link className="nav-link active fs-3 mx-2" aria-current="page" to="/">Inicio</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link fs-3" to="/SobreNosotros">Sobre Nosotros</Link>
+          <Link className="nav-link fs-3 mx-2" to="/SobreNosotros">Sobre Nosotros</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link fs-3" to="/">Productos</Link>
+          <Link className="nav-link fs-3 mx-2" to="/">Productos</Link>
         </li>
         <li className="nav-item dropdown">
-          <Link className="nav-link dropdown-toggle fs-3" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle fs-3 mx-2" to="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorias
           </Link>
           <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style={{background: "#556b2f"}}>

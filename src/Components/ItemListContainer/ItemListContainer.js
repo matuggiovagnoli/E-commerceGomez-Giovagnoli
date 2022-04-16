@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-import { collection, doc, getDocs } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
 import db from '../../utils/firebase';
 
 
-const ItemListContainer = ({saludo}) => {
+const ItemListContainer = () => {
 
   const [listaProductos, setListaProductos] = useState([]);
   const {categoryId} = useParams();
@@ -39,9 +39,27 @@ const ItemListContainer = ({saludo}) => {
 
 
   return (
-    <div style={{background: "#f5f5dc"}}>
-      <ItemList lista={ listaProductos }/>
-    </div>
+    <>
+    { 
+      listaProductos.length === 0  ?
+      <div>
+        <strong className='fs-2'>Cargando</strong>
+        <div className="spinner-grow" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        <div className="spinner-grow" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+        <div className="spinner-grow" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      :
+      <div>
+        <ItemList lista={ listaProductos }/>
+      </div>
+  }
+  </>
   )
 }
 

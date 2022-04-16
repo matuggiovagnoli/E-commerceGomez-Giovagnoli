@@ -10,7 +10,7 @@ import CartItem from '../Cart/CartItem'
 function Cart() {
   const carritoContext = useContext(CartContext)
   const productosCarrito = carritoContext.productosCarrito;
-  console.log(productosCarrito)
+  
   
 
   return (

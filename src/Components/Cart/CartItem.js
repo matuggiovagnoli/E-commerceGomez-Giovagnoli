@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
 import { BsTrash } from "react-icons/bs";
-import { addDoc, collection, Timestamp } from 'firebase/firestore';
+import { addDoc, collection, getDocs, Timestamp } from 'firebase/firestore';
 import db from '../../utils/firebase';
 import ModalCart from '../Modal/ModalCart';
 
 const CartItem = ({imagen, nombre, cantidad, precio, id, categoria, talle}) => {
     const carritoContext = useContext(CartContext)
+    const [idPedido, setIdPedido] = useState()
 
 const enviarPedido = async(event) => {
   // prevenir el refresh del onSubmit
@@ -32,7 +33,17 @@ const enviarPedido = async(event) => {
   const pedidosCollection = collection(db,"pedidos");
   // Crear nuevo documento de pedidos y guardamos la refenrencia que retorna la promesa
   const referenciaPedido = await addDoc(pedidosCollection,nuevoObjeto)
+
+  const getPedido = await getDocs(pedidosCollection)
+
+  const dataPedido = getPedido.docs.map(doc => {return{id: doc.id, ...doc.data()}})
+  
+
+  setIdPedido(dataPedido)
+  console.log("pedido", dataPedido )
 }
+
+
     
 
   return (
@@ -72,26 +83,26 @@ const enviarPedido = async(event) => {
             </button>          
           </div>
         </div>
-        <form className='position-absolute top-50 end-0 translate-middle-y w-25 h-75 p-3 needs-validation' onSubmit={enviarPedido} novalidate>
+        <form className='position-absolute top-50 end-0 translate-middle-y w-25 h-75 p-3 needs-validation' onSubmit={enviarPedido} noValidate>
           <h2 className='bg-secondary rounded-pill d-md-inline-flex p-2 '>RESUMEN DE COMPRA</h2>
           <h4 className=''>Total a Pagar $ {carritoContext.totalidadDePago()}</h4>
           <hr/>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">Nombre</span>
-            <input type="text" className="form-control form-control-sm" placeholder="Nombre Completo" aria-label="Username" aria-describedby="basic-addon1" id='validationCustomUsername' required/>
-              <div class="invalid-feedback">
-                Porfavor ingresar Nombre.
+          <div className="input-group has-validation mb-3">
+            <span className="input-group-text" id="inputGroupPrepend">Nombre</span>
+            <input type="text" className="form-control form-control-sm" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" id='validationCustomUsername' required/>
+            <div className="invalid-feedback">
+              Porfavor ingresar Nombre.
             </div>
           </div>
           <br/>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">Telefono</span>
-            <input type="text" className="form-control form-control-sm" placeholder="Ejemplo +54 351-3545698" aria-label="Username" aria-describedby="basic-addon1"/>
+          <div className="input-group has-validation mb-3">
+            <span className="input-group-text" id="inputGroupPrepend">Telefono</span>
+            <input type="text" className="form-control form-control-sm" placeholder="Ejemplo +54 351-3545698" aria-label="Username" aria-describedby="basic-addon1" id='validationCustomUsername' required/>
           </div>
           <br/>
-          <div className="input-group mb-3">
-            <span className="input-group-text" id="basic-addon1">Email</span>
-            <input type="email" className="form-control form-control-sm" placeholder="aaa@gmail.com" aria-label="Username" aria-describedby="basic-addon1"/>
+          <div className="input-group has-validation mb-3">
+            <span className="input-group-text" id="inputGroupPrepend">Email</span>
+            <input type="email" className="form-control form-control-sm" placeholder="aaa@gmail.com" aria-label="Username" aria-describedby="basic-addon1 " id='validationCustomUsername' required/>
           </div>
           <br/>
           <button className='btn btn-success' type='submit' data-bs-toggle="modal" data-bs-target={`#id1`}>Realizar Pedido</button>

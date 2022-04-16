@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../../Context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
-import Modal from '../Modal/Modal'
+
 
 
 
@@ -88,7 +88,7 @@ const ItemDetail = ({producto,colores,imagenes, stock, imagenesColor, setImagene
             <div className='col'>
               {
                 imagenesColor.map((img) => (
-                  <img src={img} className='w-50 p-1' />
+                  <img src={img} className='w-50 p-1'/>
                 ))
               }
             </div>
@@ -108,31 +108,12 @@ const ItemDetail = ({producto,colores,imagenes, stock, imagenesColor, setImagene
                 { 
                   colores.map(color => (
                     <div className='d-inline p-2' key={color}>
-                      <button className='btn btn-outline-dark' onClick={()=> setBoton(`${color}`)}>{color}</button>
+                      <button className='btn btn-outline-dark' data-bs-toggle="button" autoComplete="off" onClick={()=> setBoton(`${color}`)}>{color}</button>
                     </div>
                   ))
                 }
                 <h4>Stock disponible: {producto.stock}</h4>
                 <ItemCount max={producto.stock} onAdd={onAdd} initial={1} ProductosAgregados={productosagruegados} producto={producto} id={producto.id}/>
-                {/* {
-                  
-                  // AGREGAR MODAL PARA ESTO
-                  productosagruegados > 0 &&
-                
-                  // <div className='container'>
-                  //   <hr/>
-                  //   <div className='row '>
-                  //     <div className='col ms-5'>
-                  //       <Link to="/" className="btn btn-secondary">Seguir Comprando</Link>
-                  //     </div>
-                  //     <div className='col'>
-                  //       <Link to="/Cart" className="btn btn-danger">Finalizar mis Compras</Link>
-                  //     </div>
-                  //   </div>
-                  // </div>
-
-                } */}
-                
             </div>
             
         </div>

@@ -8,6 +8,7 @@ import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailCont
 import SobreNosotros from './Components/SobreNosotros/SobreNosotros';
 import Cart from './Components/Cart/Cart';
 import {CustomCartContext} from './Context/CustomCartContext';
+import Footer from './Components/Footer/Footer';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/detalle/:ItemId" element={<ItemDetailContainer/>} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
      </CustomCartContext>
     );

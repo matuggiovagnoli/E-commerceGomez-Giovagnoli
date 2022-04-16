@@ -45,7 +45,22 @@ const ItemDetailContainer = () => {
     
 
   return (
-    <div style={{background: "#f5f5dc"}}>
+    <>
+    { producto.legth === 0 ?
+        <div>
+        <strong className='fs-2'>Cargando</strong>
+        <div class="spinner-grow" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="spinner-grow" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      :
+      <div>
       <ItemDetail 
       producto={producto} 
       colores={colores} 
@@ -55,6 +70,8 @@ const ItemDetailContainer = () => {
       setImagenesColor={setImagenesColor}
       />
     </div>
+  }
+  </>
   )
 }
 
