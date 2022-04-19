@@ -9,7 +9,7 @@ import SobreNosotros from './Components/SobreNosotros/SobreNosotros';
 import Cart from './Components/Cart/Cart';
 import {CustomCartContext} from './Context/CustomCartContext';
 import Footer from './Components/Footer/Footer';
-
+import Inicio from './Components/Inicio/Inicio';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<ItemListContainer/>} />
+          <Route path="/Inicio" element={<Inicio/>} />
           <Route path="/productos/:categoryId" element={<ItemListContainer/>} />
           <Route path="/SobreNosotros" element={<SobreNosotros/>} />
           <Route path="/Cart" element={<Cart/>} />

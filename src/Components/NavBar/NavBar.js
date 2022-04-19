@@ -15,7 +15,7 @@ return(
     <div className="collapse navbar-collapse" id="navbarNavDropdown">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link active fs-3 mx-2" aria-current="page" to="/">Inicio</Link>
+          <Link className="nav-link active fs-3 mx-2" aria-current="page" to="/Inicio">Inicio</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link fs-3 mx-2" to="/SobreNosotros">Sobre Nosotros</Link>
