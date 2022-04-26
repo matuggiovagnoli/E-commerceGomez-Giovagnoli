@@ -6,7 +6,7 @@ import ItemCount from '../ItemCount/ItemCount'
 
 
 
-const ItemDetail = ({producto,colores,imagenes, stock, imagenesColor, setImagenesColor}) => {
+const ItemDetail = ({producto,colores,imagenes, imagenesColor, setImagenesColor}) => {
 
   const carritoContext = useContext(CartContext);
   const [productosagruegados, setProductosAgregados] = useState(0);
@@ -88,7 +88,7 @@ const ItemDetail = ({producto,colores,imagenes, stock, imagenesColor, setImagene
             <div className='col'>
               {
                 imagenesColor.map((img) => (
-                  <img src={img} className='w-50 p-1'/>
+                  <img src={img} key={img} className='w-50 p-1'/>
                 ))
               }
             </div>

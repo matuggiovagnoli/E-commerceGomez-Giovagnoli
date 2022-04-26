@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function ModalCart({id}) {
+function ModalCart({id, idPedido}) {
   return (
     <div className="modal fade" id={id} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -11,7 +11,7 @@ function ModalCart({id}) {
             </div>
             <div className="modal-body">
                 <h3>Excelente, tu pedido fue realizado!</h3>
-                <p>Tu codigo de pedido es: ..... como rescato el numero de referencia?</p>
+                <p>Tu codigo de pedido es: {idPedido}</p>
             </div>
             <div className="modal-footer justify-content-center">
                 <Link to={"/"} className="btn btn-primary btn-lg" data-bs-dismiss="modal">Volver a Inicio</Link>

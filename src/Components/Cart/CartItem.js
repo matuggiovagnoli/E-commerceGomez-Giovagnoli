@@ -13,6 +13,8 @@ const CartItem = ({imagen, nombre, cantidad, precio, id, categoria, talle}) => {
 const enviarPedido = async(event) => {
   // prevenir el refresh del onSubmit
   event.preventDefault();
+
+  
   
   //guardo variables refiriendo a su posicion en target
   const nombre = event.target[0].value;
@@ -37,10 +39,12 @@ const enviarPedido = async(event) => {
   const getPedido = await getDocs(pedidosCollection)
 
   const dataPedido = getPedido.docs.map(doc => {return{id: doc.id, ...doc.data()}})
-  
 
-  setIdPedido(dataPedido)
-  console.log("pedido", dataPedido )
+  setIdPedido(referenciaPedido.id)
+  
+    console.log('datapedido', dataPedido)
+    console.log('idPedido', idPedido)
+
 }
 
 
@@ -107,7 +111,7 @@ const enviarPedido = async(event) => {
           <br/>
           <button className='btn btn-success' type='submit' data-bs-toggle="modal" data-bs-target={`#id1`}>Realizar Pedido</button>
         </form>
-        <ModalCart id={`id1`}/>
+        <ModalCart id={`id1`} idPedido={idPedido}/>
     </div>
   )
 }

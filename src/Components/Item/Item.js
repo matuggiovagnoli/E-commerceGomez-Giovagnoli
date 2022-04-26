@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom"
 
 
-function Item({nombre,talla,color,marca,categoria,img,id,precio}) {
+function Item({nombre,img,id,precio}) {
   return (
   
     <div className="card p-0" style={{width: '18rem', margin: '12px', display: "inline"}}>
