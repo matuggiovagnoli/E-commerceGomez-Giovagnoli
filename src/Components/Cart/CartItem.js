@@ -116,4 +116,4 @@ const enviarPedido = async(event) => {
   )
 }
 
-export default CartItem
+export default CartItem;

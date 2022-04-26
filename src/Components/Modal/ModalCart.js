@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function ModalCart({id, idPedido}) {
+    let navigate = useNavigate();
   return (
     <div className="modal fade" id={id} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -14,7 +15,7 @@ function ModalCart({id, idPedido}) {
                 <p>Tu codigo de pedido es: {idPedido}</p>
             </div>
             <div className="modal-footer justify-content-center">
-                <Link to={"/"} className="btn btn-primary btn-lg" data-bs-dismiss="modal">Volver a Inicio</Link>
+                <button className="btn btn-primary btn-lg" data-bs-dismiss="modal" onClick={() => navigate('/Inicio')}>Volver a Inicio</button>
             </div>
             </div>
         </div>

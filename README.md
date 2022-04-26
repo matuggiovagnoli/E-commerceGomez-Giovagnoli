@@ -1,3 +1,7 @@
+# Bienvenidos al E-commerce Faustina
+En este proyecto creamos una pagina de ventas de articulos de ropa, en este caso calzado femenino y marroquineria.
+Proximamente se describiran los pasos a seguir con NPM para inicializar y arrancar la pagina web!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +72,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<hr>
+
+
+## Paquetes y dependencias
+
+Antes de arrancar la aplicacion con npm start debemos instalar los siguientes paquetes o dependencias
+
+### Lista de Dependencias:
+- React Router Dom
+    link a la  pagina: [React Router Dom](https://v5.reactrouter.com/web/guides/quick-start)
+    
+- React Icons
+    link a la  pagina: [React Icons](https://react-icons.github.io/react-icons/)
+
+- Boostrap
+    link a la  pagina: [Boostrap](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+
+## Base de datos
+
+En este proyecto estaremos trabajando con una base de datos no relacional, el cual es Firebase

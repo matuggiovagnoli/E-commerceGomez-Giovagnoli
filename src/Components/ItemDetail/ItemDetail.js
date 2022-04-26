@@ -88,7 +88,7 @@ const ItemDetail = ({producto,colores,imagenes, imagenesColor, setImagenesColor}
             <div className='col'>
               {
                 imagenesColor.map((img) => (
-                  <img src={img} key={img} className='w-50 p-1'/>
+                  <img src={img} key={img} alt='img del producto' className='w-50 p-1'/>
                 ))
               }
             </div>
@@ -108,7 +108,7 @@ const ItemDetail = ({producto,colores,imagenes, imagenesColor, setImagenesColor}
                 { 
                   colores.map(color => (
                     <div className='d-inline p-2' key={color}>
-                      <button className='btn btn-outline-dark' data-bs-toggle="button" autoComplete="off" onClick={()=> setBoton(`${color}`)}>{color}</button>
+                      <button type='button' className='btn btn-secondary' data-bs-toggle="button" autoComplete="off" onClick={()=> setBoton(`${color}`)}>{color}</button>
                     </div>
                   ))
                 }
